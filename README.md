@@ -10,7 +10,7 @@
 
 ```rust
 fn get_data() -> Vec<u8> {
-    const DATA: [u8; 5] = [255, 't' as u8, 'e' as u8, 's' as u8, 't' as u8];
+    const DATA: [u8; 5] = [255, b't', b'e', b's', b't'];
     DATA.to_vec() // Return dynamically allocated array (Vector)
 }
 
