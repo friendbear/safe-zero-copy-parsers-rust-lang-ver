@@ -17,7 +17,7 @@ impl ParsedData<'_> {
 }
 
 fn get_data() -> Vec<u8> {
-    const DATA: [u8; 5] = [255, 't' as u8, 'e' as u8, 's' as u8, 't' as u8];
+    const DATA: [u8; 5] = [255, b't', b'e', b's', b't'];
     DATA.to_vec() // Return dynamically allocated array (Vector)
 }
 #[test]
@@ -44,7 +44,7 @@ fn main() {
 
     // Tamper with the original buffer
     let mut cloned_buffer = buffer.clone();
-    cloned_buffer[1] = 'j' as u8;
+    cloned_buffer[1] = b'j';
     // Parse buffer into ParsedData struct
     let parsed_data = ParsedData::parse(&cloned_buffer);
 
